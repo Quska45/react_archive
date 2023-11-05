@@ -1,0 +1,57 @@
+.navbar, .sidebar-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* 인라인 요소들을 미리 inline-block으로 바꿔 놓는 식으로 쓰네. */
+.navbar a, .navbar span {
+  display: inline-block;
+}
+
+.navbar{
+  border: 1px solid black;
+  /* rem은 root의 폰트사이즈에 따라 상대적으로 값이 변하는 단위이다. */
+  padding: 0.7rem 1.5rem; 
+  /* 
+    https://velog.io/@ursr0706/line-height-%EC%86%8D%EC%84%B1
+    줄간격을 위한 속성. 상대적인 값을 쓰는게 보기 좋다.
+    텍스트의 위 아래에 leading영역이라는게 있다.
+    line-height는 font-size + leading영역이 되는 것이다.
+    실제로 line-height를 늘렸을 떄 커지는 것은 leading영역이다.
+  */
+  line-height: 2.2rem;
+  z-index: 20;
+  /*
+    right 0을 주니까 width가 꽉 차게 들어간다는 걸 알게 됐음.
+    근데 어쨰서 이렇게 되는지는 모름.
+  */
+  right: 0;
+  height: 3.6rem;
+  background-color: #fff;
+  /* 
+    요소의 전체 너비와 높이를 어떻게 계산하는지 설정 
+    기본 값은 content로 padding, border값에 따라 box가 같이 커짐.
+    하지만 border-box는 padding, border에 box가 영향을 받지 않음.
+  */
+  box-sizing: border-box;
+  border-bottom: 1px solid #eaecef;
+}
+
+.navbar .site-name {
+  font-size: 1.3rem; /* 폰트 사이즈 까지도 rem 사용해서 처리하는거 좋다.*/
+  font-weight: 600;
+  color: #2c3e50;
+  position: relative;
+}
+
+.navbar .links {
+  padding-left: 1.5rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  /* 
+    https://www.daleseo.com/css-white-space/
+    한 html 요소 내에서 공백에 대한 처리방식을 정할 수 있도록 해준다.
+  */
+  white-space: nowrap;
+}

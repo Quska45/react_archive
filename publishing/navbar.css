@@ -10,7 +10,6 @@
 }
 
 .navbar{
-  border: 1px solid black;
   /* rem은 root의 폰트사이즈에 따라 상대적으로 값이 변하는 단위이다. */
   padding: 0.7rem 1.5rem; 
   /* 
@@ -46,12 +45,29 @@
 }
 
 .navbar .links {
+  max-width: 522px;
   padding-left: 1.5rem;
   box-sizing: border-box;
   background-color: #fff;
   /* 
     https://www.daleseo.com/css-white-space/
     한 html 요소 내에서 공백에 대한 처리방식을 정할 수 있도록 해준다.
+    기본은 normal로 무조건 html영역을 넘어가면 줄바꿈을 해주고 줄바꿈 문자를 사용한다던가 하는 것이 불가능 함
+    nowrap은 줄바꿈을 하지 않고 영역을 넘어가면 그냥 쭉 이어서 보여주고 줄바꿈 문자 같은게 안되는 것은 normal과 동일.
   */
   white-space: nowrap;
+  font-size: 0.9rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 0.7rem;
+  display: flex;
+}
+
+@media (max-width: 959px) {
+  .search-box input {
+    cursor: pointer;
+    width: 0;
+    border-color: transparent;
+    position: relative;
+  }
 }

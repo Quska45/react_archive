@@ -18,7 +18,14 @@
           <span class="site-name">기억보다 기록을</span>
         </a>
         <div class="links">
-          
+          <div class="search-box">
+            <!-- 
+              aria-label : 모든 html에 사용할 수 있으며, 이미지만 있고 텍스트가 없는 경우에 사용할 수 있다. 이런게 웹 접근성과 관련된 거라고 한다.
+              autocomplete : input에서 자동완성 기능을 사용할지 여부를 명시
+              spellcheck : 입력된 텍스트에 빨간줄 뜨는거 끄기
+             -->
+            <input aria-label="Search" autocomplete="off" spellcheck="false" value="" class="" placeholder="">
+          </div>
         </div>
       </header>
     </div>

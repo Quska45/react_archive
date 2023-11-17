@@ -26,10 +26,57 @@
              -->
             <input aria-label="Search" autocomplete="off" spellcheck="false" value="" class="" placeholder="">
           </div>
+          <!--  -->
+          <nav class="nav-links">
+            <div class="nav-item">
+              <a href="#">Tag</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link router-link-exact-active router-link-active">React</a>
+            </div>
+            <div class="nav-item">
+              <div class="dropdown-wrapper">
+                <!-- aria-label은 웹접근성 측면에서 이미지로 이뤄진 요소에 붙이는 태그라고 하는데 굳이 여기에 왜 붙였을까? -->
+                <button type="button" aria-label="Info" class="dropdonw-title">
+                  <span class="title">Info</span>
+                  <span class="arrow down"></span>
+                </button>
+                <ul class="nav-dropdown">
+                  <li class="dropdown-item">
+                    <a href="">github</a>
+                    <a href="">test1</a>
+                    <a href="">test2</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
         </div>
       </header>
     </div>
     <div class="global-ui"></div>
   </div>
+
+  <script>
+    // const infoBtn = document.getElementsByClassName('dropdonw-title')[0];
+    // infoBtn.addEventListener('mouseover', () => {
+    //   console.log('asdf');
+    // });
+    // infoBtn.addEventListener('mouseleave', () => {
+    //   console.log('234');
+    // });
+
+    // const dropdownWrapper = document.getElementsByClassName('dropdown-wrapper')[0];
+    // const navDropdown = document.getElementsByClassName('nav-dropdown')[0];
+    // dropdownWrapper.addEventListener('mouseover', () => {
+    //   navDropdown.classList.toggle('hover');
+    //   console.log('hover');
+    //   console.log(navDropdown.classList);
+    // });
+    // navDropdown.addEventListener('mouseleave', () => {
+    //   console.log('leave');
+    //   // dropdownWrapper.classList.toggle('hover');
+    // });
+  </script>
 </body>
 </html>

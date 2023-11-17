@@ -23,7 +23,7 @@
   z-index: 20;
   /*
     right 0을 주니까 width가 꽉 차게 들어간다는 걸 알게 됐음.
-    근데 어쨰서 이렇게 되는지는 모름.
+    근데 어쨰서 이렇게 되는지는 모름. -> position: fixed, absolute와 함꼐 사용하는 경우에 꽉 찬다고 함.
   */
   right: 0;
   height: 3.6rem;
@@ -45,7 +45,7 @@
 }
 
 .navbar .links {
-  max-width: 522px;
+  max-width: 522px; /* 이거만 inline으로 되어 있던데 이유가 있었을까? 궁금... */
   padding-left: 1.5rem;
   box-sizing: border-box;
   background-color: #fff;
@@ -70,4 +70,124 @@
     border-color: transparent;
     position: relative;
   }
+  /* focus가 갔을 때 이런 식으로 처리하는 거 진짜 개꿀이지 않나 하는 생각이 든다. */
+  .search-box input:focus {
+    cursor: text;
+    width: 10rem;
+  }
+}
+
+.search-box {
+  margin-right: 1rem;
+}
+
+@media (min-width: 959px) {
+  .search-box input {
+    border: 1px solid #cfd4db;
+  }
+}
+
+.search-box input:focus{
+  cursor: auto;
+  border-color: green;
+}
+.search-box input {
+  height: 2rem;
+  color: #4e6e8e;
+  display: inline-block;
+  border-radius: 2rem;
+  font-size: .9rem;
+  line-height: 2rem;
+  padding: 0 0.5rem 0 2rem;
+  outline: none;
+  /* 
+    요소의 변화에 대한 트랜지션 효과를 적용해준다.
+    all이 있기 때문에 width, height 등 무슨 속성이 바뀌더라도 트랜지션이 무조건 일어나게 됨.
+  */
+  transition: all .2s ease;
+  background: #fff url(./search_30.svg) 0.6rem 0.5rem no-repeat;
+  background-size: 1rem;
+}
+
+.nav-links {
+  display: inline-block; /* nav의 원래 display가 뭔지는 잘 모르겠다. */
+}
+
+.nav-links .nav-item:first-child{
+  margin-left: 0;
+}
+
+.nav-links .nav-item {
+  position: relative;
+  display: inline-block;
+  line-height: 2rem;
+  margin-left: 1.5rem;
+}
+
+.nav-links a {
+  line-height: 1.4rem;
+  /* color: inherit; */
+  color: #2c3e50;
+}
+
+.router-link-active {
+  margin-bottom: -2px;
+  border-bottom: 2px solid #46bd87;
+}
+
+.dropdown-wrapper .dropdonw-title {
+  /* font-size: .9rem; */
+  background: transparent;
+  border: none;
+}
+
+/* 
+  이게 세모로 나오는데 어떻게 이럴수가 있는지 잘 모르겠네..
+  원래 사이트가 따로 작성했길래 나도 일단 따로 작성해 놓았다.
+*/
+.arrow.down {
+  border-top: 6px solid #ccc;
+}
+.arrow.down {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.dropdown-wrapper .nav-dropdown {
+  display: none;
+  height: auto!important;
+  /* 
+    vh는 viewport heigth의 약자. vw도 비슷함.
+    100vh가 화면의에 보이는 크기를 의미하는 것임.
+    따라서 height가 1000px이라고 하면 100vh가 1000px이라고 할 수 있음.
+  */
+  max-height: calc(100vh - 2.7rem);
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #ddd #ddd #ccc;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  box-sizing: border-box;
+  margin: 0;
+  right: 0;
+  text-align: left;
+  padding: .6rem 0;
+}
+
+.dropdown-wrapper:hover .nav-dropdown {
+  display: inline-block;
+}
+
+.dropdown-wrapper .nav-dropdown .dropdown-item a {
+  display: block;
+  position: relative;
+  padding: 0 1.5rem 0 1.25rem;
+}
+
+.dropdown-wrapper .nav-dropdown .dropdown-item a:hover {
+  color: #46bd87;
 }

@@ -5,6 +5,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="common.css">
   <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="sidebar.css">
   <style>
   </style>
 </head>
@@ -53,6 +54,30 @@
           </nav>
         </div>
       </header>
+      <!-- 
+        <aside> 태그는 페이지의 주요 콘텐츠 영역의 보조(혹은 부가) 컨텐츠 영역을 나타냅니다. 
+        주요 콘텐츠와 상호작용하지 않고 보조(혹은 부가)적인 역할을 하는 내용이 포함될 수 있습니다. 
+        주로 웹 페이지의 사이드바를 나타냅니다. 
+      -->
+      <aside class="sidebar">
+        <ul class="sidebar-links">
+          <li>
+            <a href="#" class="active sidebar-link">React</a>
+          </li>
+          <li>
+            <!-- 
+              <section> 태그는 문서나 애플리케이션의 논리적인 측면에서 주제별 콘텐츠 그룹을 나타내는데 사용됩니다. 
+              반면, <article> 태그는 독립적으로 배포 가능하거나 재사용할 수 있는 콘텐츠를 묶는 영역으로 사용됩니다. 
+            -->
+            <section class="sidebar-group collapsable depth-0">
+              <p class="sidebar-heading">
+                <span>TS</span>
+                <span class="arrow right"></span>
+              </p>  
+            </section>
+          </li>
+        </ul>
+      </aside>
     </div>
     <div class="global-ui"></div>
   </div>

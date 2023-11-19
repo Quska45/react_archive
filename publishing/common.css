@@ -10,3 +10,18 @@ a {
   font-weight: 500;
   text-decoration: none;
 }
+
+/* ul의 라인헤이트는 전역으로 잡아 놓고 쓰는 구나 */
+ul {
+  line-height: 1.7rem;
+}
+
+section {
+  display: block;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
